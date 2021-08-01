@@ -37,6 +37,11 @@ app.get('/add-user', (req, res) => {
     res.render('add_user');
 })
 
+app.get('/update-user', (req, res) => {
+    //this will render the update_user.ejs file
+    res.render('update_user');
+})
+
 
 
 app.listen(3000, () => { console.log(`server is running on http://localhost:${PORT}`) });
