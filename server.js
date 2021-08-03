@@ -12,8 +12,15 @@ const path = require('path');
 
 const PORT = process.env.PORT || 8080
 
+//connection db
+const connectDB = require("./server/database/connection")
+
 // to display log requests in the terminal
 app.use(morgan('tiny'))
+
+
+//mongodb connection
+connectDB();
 
 //parse request to body parser
 app.use(bodyparser.urlencoded({ extended: true }))
@@ -26,22 +33,8 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 //set view engine
 app.set("view engine", 'ejs')
 
-//when we route to the root page
-app.get('/', (req, res) => {
-    //we don't need to specify index.js since we already sepecified it(see line# 27)
-    res.render('index');
-})
-
-app.get('/add-user', (req, res) => {
-    //this will render the add_user.ejs file
-    res.render('add_user');
-})
-
-app.get('/update-user', (req, res) => {
-    //this will render the update_user.ejs file
-    res.render('update_user');
-})
-
+//load routers
+app.use('/', require('./server/routes/router'))
 
 
 app.listen(3000, () => { console.log(`server is running on http://localhost:${PORT}`) });
