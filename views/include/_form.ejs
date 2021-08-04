@@ -1,4 +1,4 @@
-<form method="POST" id="add_user">
+<form action="/api/users" method="POST" id="add_user">
     <div class="new_user">
         <div class="form-group">
             <label for="name" class="text-light">Name</label>
@@ -27,14 +27,14 @@
         <div class="form-group">
             <label for="gender" class="text-light">Status</label>
             <div class="radio inline">
-                <input type="radio" id="radio3" name="gender" value="Active">
+                <input type="radio" id="radio3" name="status" value="Active">
                 <label for="radio3" class="radio-label">Active</label>
             </div>
 
 
             <div class="radio inline">
                 <!-- since name is same for radio input hence its functionality is preserved -->
-                <input type="radio" id="radio4" name="gender" value="Inctive">
+                <input type="radio" id="radio4" name="status" value="Inctive">
                 <label for="radio4" class="radio-label">Inctive</label>
             </div>
 
