@@ -23,23 +23,25 @@
                     <div class="form-group">
                         <label for="name" class="text-light">Name</label>
                         <!-- for id -->
-                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="id" value="<%= user._id%>">
                         <!-- for name -->
-                        <input type="text" name="name" value="" placeholder="John Smith">
+                        <input type="text" name="name" value="<%= user.name%>" placeholder="John Smith">
                     </div>
                     <div class="form-group">
                         <label for="Email" class="text-light">Email</label>
-                        <input type="text" name="email" value="" placeholder="example@gmail.com">
+                        <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com">
                     </div>
                     <div class="form-group">
                         <label for="gender" class="text-light">Gender</label>
                         <div class="radio inline">
-                            <input type="radio" id="radio1" name="gender" value="Male">
+                            <input type="radio" id="radio1" name="gender" value="Male" <%=user.gender=='Male'
+                                ?'checked':''%> >
                             <label for="radio1" class="radio-label">Male</label>
                         </div>
                         <div class="radio inline">
                             <!-- since name is same for radio input hence its functionality is preserved -->
-                            <input type="radio" id="radio2" name="gender" value="Female">
+                            <input type="radio" id="radio2" name="gender" value="Female" <%=user.gender=='Female'
+                                ?'checked':''%> >
                             <label for="radio2" class="radio-label">Female</label>
                         </div>
                     </div>
@@ -47,15 +49,17 @@
                     <div class="form-group">
                         <label for="gender" class="text-light">Status</label>
                         <div class="radio inline">
-                            <input type="radio" id="radio3" name="gender" value="Active">
+                            <input type="radio" id="radio3" name="status" value="Active" <%=user.status=='Active'
+                                ?'checked':''%> >
                             <label for="radio3" class="radio-label">Active</label>
                         </div>
 
 
                         <div class="radio inline">
                             <!-- since name is same for radio input hence its functionality is preserved -->
-                            <input type="radio" id="radio4" name="gender" value="Inctive">
-                            <label for="radio4" class="radio-label">Inctive</label>
+                            <input type="radio" id="radio4" name="status" value="Inactive" <%=user.status=='Inactive'
+                                ?'checked':''%> >
+                            <label for="radio4" class="radio-label">Inactive</label>
                         </div>
 
                     </div>
