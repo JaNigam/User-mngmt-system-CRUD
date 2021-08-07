@@ -17,11 +17,17 @@
             <%=users[i].status%>
         </td>
         <td>
+            <!-- update the user  -->
             <a href="/update-user?id=<%= users[i]._id%>" class='btn border-shadow update'>
                 <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
             </a>
 
-            <a class='btn border-shadow delete'>
+            <!-- delete the user  -->
+            <!-- notice here we dont have any href attribute
+            hence we'll be using js to perfom the task -->
+
+            <!-- to see how js is implemented to perform this task go to index.js  -->
+            <a class='btn border-shadow delete' data-id=<%=users[i]._id %>>
                 <span class="text-gradient"><i class="fas fa-times"></i></span>
             </a>
         </td>

@@ -34,3 +34,37 @@ $('#update_user').submit(function (event) {
         alert("data uploaded successfully!");
     })
 })
+
+if (window.location.pathname == '/') {
+    //we select the delete button and store it in deletebutton var
+    //here .table and .delete are the class to see more go to _show.ejs and watch for delete a tag
+    $deleteBut = $(".table tbody td a.delete");
+    //execute a function when delete button is clicked
+    $deleteBut.click(function () {
+        //we get the data-id value of the anchor tag
+        //note data-id is an attribute of a tag
+        //with this we can get the id of that user
+        var id = $(this).attr("data-id")
+
+        //now we can make a request to delete the user
+
+        var request = {
+            //provide the id for the put request 
+            'url': `http://localhost:3000/api/users/${id}`,
+            'method': 'DELETE'
+        }
+
+        //now we'll ask the user to confirm the deletion of the record using the inbuilt function of js which is 'confirm()'
+
+        if (confirm('Do you really wanna delete this record?')) {
+            //now we call the ajax request
+            $.ajax(request).done(function (response) {
+                // alert("Record sucessfully deleted!");
+                location.reload();
+            })
+        }
+
+
+    })
+
+}
