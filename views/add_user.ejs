@@ -1,28 +1,28 @@
 <!-- include header -->
 <%- include('include/_header')%>
-<!-- /include header -->
+    <!-- /include header -->
 
-<!-- main -->
-<main id='site-main'>
-    <div class="container">
-        <div class="box-nav d-flex justify-between">
-            <div class="filter">
-                <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+    <!-- main -->
+    <main id='site-main'>
+        <div class="container">
+            <div class="box-nav d-flex justify-between">
+                <div class="filter">
+                    <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+                </div>
             </div>
+
+            <div class="form-title text-center">
+                <h2 class="text-dark">New User</h2>
+                <span class="text-dark">Use the below form to create a new account</span>
+
+            </div>
+
+            <!-- include form ejs-->
+            <%- include('include/_form')%>
         </div>
+    </main>
+    <!-- /main -->
 
-        <div class="form-title text-center">
-            <h2 class="text-dark">New User</h2>
-            <span class="text-light">Use the below form to create a new account</span>
-
-        </div>
-
-        <!-- include form ejs-->
-        <%- include('include/_form')%>
-    </div>
-</main>
-<!-- /main -->
-
-<!-- include footer -->
-<%- include('include/_footer')%>
-<!-- /include footer -->
+    <!-- include footer -->
+    <%- include('include/_footer')%>
+        <!-- /include footer -->
