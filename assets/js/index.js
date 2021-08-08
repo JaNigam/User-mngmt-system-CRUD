@@ -25,7 +25,7 @@ $('#update_user').submit(function (event) {
     //here reqest is and object (can give any name of our choice )
     var request = {
         //provide the id for the put request 
-        'url': `http://localhost:3000/api/users/${data.id}`,
+        'url': `https://user-mngmt-crud.herokuapp.com/api/users/${data.id}`,
         'method': 'PUT',
         'data': data
     }
@@ -50,7 +50,7 @@ if (window.location.pathname == '/') {
 
         var request = {
             //provide the id for the put request 
-            'url': `http://localhost:3000/api/users/${id}`,
+            'url': `https://user-mngmt-crud.herokuapp.com/api/users/${id}`,
             'method': 'DELETE'
         }
 
